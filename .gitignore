@@ -1,0 +1,13 @@
+# build output and Dell's firmware: never commit these
+webui/build/
+*.ros
+*.rfb
+*.zip
+*.7z
+__pycache__/
+.DS_Store
+# serial bridge runtime files
+tools/serial/console.log
+tools/serial/tx
+tools/serial/autostop
+tools/serial/menuchoice
