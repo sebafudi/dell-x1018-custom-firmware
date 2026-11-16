@@ -1,18 +1,23 @@
-# Dell X1018 web UI (unofficial)
+# Dell X1018 custom firmware (unofficial)
 
-A fast replacement web interface for the **Dell EMC Networking X1018** switch (X1000 series, firmware 3.0.1.9), served by the switch itself.
-Plus tools to unpack and repack Dell X10xx `.ros` firmware images, and recovery notes.
+Custom firmware for the **Dell EMC Networking X1018** switch (X1000 series), built from Dell's official 3.0.1.9 image.
+Also: tools to unpack and repack Dell X10xx `.ros` firmware images, plus recovery and upgrade notes.
 
 > Not affiliated with or endorsed by Dell. This repo contains **no Dell code**: the build script patches **your own copy** of Dell's official firmware.
 
-## What you get
+## What the custom image changes
+
+- Everything outside the web UI section is Dell's, byte for byte
+- The web UI section adds a new interface, the default at `https://<switch-ip>/` (below)
+- The classic Dell UI stays in the image at `<prefix>/home.htm`, same session
+
+## The new web UI
 
 - **Front panel as the workspace**: real jack layout, ports painted by VLAN, LNK/ACT LEDs
 - **Fast**: cached data shows at once and refreshes in the background, instead of the classic UI's 5–25 s waits
 - **Pending changes**: edit ports and VLANs, see the result before applying, apply in one go, then "Save" to startup config
 - **Everything the classic UI configures**: STP, LAG, QoS, ACLs, IGMP, LLDP, mirroring, users, time, firmware, diagnostics…
 - **Traffic, devices (MAC / LLDP / ARP), event log, ⌘K search**
-- The classic Dell UI stays in the image at `<prefix>/home.htm`, same session
 
 ## Supported
 
@@ -40,7 +45,7 @@ Notes:
 - On 3.0.1.8+ HTTP is off by default: use `https://`.
 - No `expect`? Use the classic web UI instead: Switch Management → File Update and Backup, then pick the new image as the boot image.
 
-## Go back to Dell's UI
+## Go back to Dell's firmware
 
 - Without reflashing: sign in to the new UI, then in the address bar replace `config/log_off_page.htm` with `home.htm`
 - To boot the other slot: Settings → Firmware images → choose the other image → restart
