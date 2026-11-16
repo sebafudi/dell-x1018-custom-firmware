@@ -1,0 +1,30 @@
+#!/usr/bin/expect -f
+# usage: certimport.exp <slot 1|2> <pem-bundle>
+# env: SW_HOST (default 192.168.2.1, the factory address), SW_USER / SW_PASS (default admin / admin)
+# Pastes an RSA private key (PKCS#1), RSA public key and certificate into
+# `crypto certificate <slot> import` (config mode), ending with "." on its own line.
+set host [expr {[info exists env(SW_HOST)] ? $env(SW_HOST) : "192.168.2.1"}]
+set user [expr {[info exists env(SW_USER)] ? $env(SW_USER) : "admin"}]
+set pass [expr {[info exists env(SW_PASS)] ? $env(SW_PASS) : "admin"}]
+set slot [lindex $argv 0]
+set f [open [lindex $argv 1]]; set lines [split [string trimright [read $f]] "\n"]; close $f
+set timeout 60
+log_user 1
+spawn ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o KexAlgorithms=+diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAuthentication=no -o Ciphers=+aes128-cbc,aes256-cbc,3des-cbc $user@$host
+expect "User Name:"; sleep 1; send "$user\r"
+expect "assword:"; sleep 1; send "$pass\r"
+expect -re "#"
+send "configure\r"; expect -re "\\(config\\)#"
+send "crypto certificate $slot import\r"
+expect -re "(?i)paste the input now.*\n"
+log_user 0
+foreach l $lines { send -- "$l\r"; after 30 }
+log_user 1
+send ".\r"
+set timeout 120
+expect {
+  -re "\\(Y/N\\)" { send "Y\r"; exp_continue }
+  -re "\\(config\\)#\\s*$" {}
+}
+send "end\r"; expect -re "#"
+send "exit\r"; expect eof

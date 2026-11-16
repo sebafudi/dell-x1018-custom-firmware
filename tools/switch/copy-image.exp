@@ -1,0 +1,21 @@
+#!/usr/bin/expect -f
+# usage: copy-image.exp tftp://<your-ip>/<file>.ros   copy a firmware image into the inactive slot (marked for next boot), then show bootvar
+# env: SW_HOST (default 192.168.2.1, the factory address), SW_USER / SW_PASS (default admin / admin)
+set timeout 600
+if {![llength $argv]} { puts "usage: copy-image.exp tftp://<your-ip>/<file>.ros"; exit 1 }
+set host [expr {[info exists env(SW_HOST)] ? $env(SW_HOST) : "192.168.2.1"}]
+set user [expr {[info exists env(SW_USER)] ? $env(SW_USER) : "admin"}]
+set pass [expr {[info exists env(SW_PASS)] ? $env(SW_PASS) : "admin"}]
+spawn ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o KexAlgorithms=+diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAuthentication=no -o Ciphers=+aes128-cbc,aes256-cbc,3des-cbc $user@$host
+expect "User Name:"; sleep 1; send "$user\r"
+expect "assword:"; sleep 1; send "$pass\r"
+expect "#"
+set url [lindex $argv 0]
+send "copy $url image\r"
+expect {
+  -re "Copy:.*\\]" {}
+  -re "rror|ailed|imed out" {}
+}
+expect "#"
+send "show bootvar\r"; expect "#"
+send "exit\r"; expect eof

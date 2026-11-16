@@ -1,0 +1,32 @@
+#!/usr/bin/expect -f
+# usage: cli.exp "show version" "show bootvar" ...   run CLI commands over SSH ("?" help queries work too)
+# env: SW_HOST (default 192.168.2.1, the factory address), SW_USER / SW_PASS (default admin / admin)
+set host [expr {[info exists env(SW_HOST)] ? $env(SW_HOST) : "192.168.2.1"}]
+set user [expr {[info exists env(SW_USER)] ? $env(SW_USER) : "admin"}]
+set pass [expr {[info exists env(SW_PASS)] ? $env(SW_PASS) : "admin"}]
+set timeout 20
+log_user 1
+spawn ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o KexAlgorithms=+diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAuthentication=no -o Ciphers=+aes128-cbc,aes256-cbc,3des-cbc $user@$host
+expect "User Name:"; sleep 1; send "$user\r"
+expect "assword:"; sleep 1; send "$pass\r"
+expect -re "#"
+foreach c $argv {
+  if {[string index $c end] eq "?"} {
+    send "$c"
+    expect -timeout 6 -re "#\[^\r\n\]*$" {}
+    send "\025"
+    sleep 0.5
+    send "\r"
+    expect -timeout 6 -re "#\\s*$" {}
+  } else {
+    send "$c\r"
+    expect {
+      -re "More: <space>" { send " "; exp_continue }
+      -re "\\(Y/N\\)" { send "Y\r"; exp_continue }
+      -re "#\\s*$" {}
+    }
+  }
+}
+send "end\r"; expect -re "#"
+send "exit\r"
+expect eof
