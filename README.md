@@ -5,6 +5,8 @@ Also: tools to unpack and repack Dell X10xx `.ros` firmware images, plus recover
 
 > Not affiliated with or endorsed by Dell. This repo contains **no Dell code**: the build script patches **your own copy** of Dell's official firmware.
 
+![The new web UI: front panel coloured by VLAN, the VLAN matrix with two staged port moves, and the pending-changes tray](docs/screenshots/vlans-pending.png)
+
 ## What the custom image changes
 
 - Everything outside the web UI section is Dell's, byte for byte
@@ -18,6 +20,15 @@ Also: tools to unpack and repack Dell X10xx `.ros` firmware images, plus recover
 - **Pending changes**: edit ports and VLANs, see the result before applying, apply in one go, then "Save" to startup config
 - **Everything the classic UI configures**: STP, LAG, QoS, ACLs, IGMP, LLDP, mirroring, users, time, firmware, diagnostics…
 - **Traffic, devices (MAC / LLDP / ARP), event log, ⌘K search**
+
+| | |
+|---|---|
+| ![Traffic view: graph of the busiest ports over the last 30 minutes and a rate table](docs/screenshots/traffic.png) | ![Port 10 selected: the inspector with its VLANs and settings, next to the devices table](docs/screenshots/port-inspector.png) |
+| **Traffic**: the busiest ports over the last 30 min | **Port inspector**: VLANs, link, neighbours, every per-port setting |
+| ![Settings sheet open on Spanning tree](docs/screenshots/settings.png) | ![The VLAN view in the light theme](docs/screenshots/vlans-pending-light.png) |
+| **Settings**: every global setting, grouped and searchable | **Light theme** |
+
+Screenshots show a demo network: names, addresses and MACs are made up.
 
 ## Supported
 
