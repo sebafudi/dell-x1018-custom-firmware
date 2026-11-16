@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>x1018 · x1018 workspace (locked)</title>
+<style>
+:root{--bg:#15171b;--up:#1c1f24;--rule:#30353d;--tx:#eceef1;--mu:#a9b0ba;--plate:#353a42;--hole:#08090b;--edge:#59606b;--off:#454a52;--grn:#3ddc84;--amb:#ffb020;
+ --g:196px repeat(16,43px) 16px 43px 43px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1440px;height:900px;overflow:hidden;background:var(--bg);color:var(--tx);font:400 13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-variant-numeric:tabular-nums}
+b{font-weight:600}.mu{color:var(--mu)}
+.c1{--c:#3AA8FF}.c20{--c:#FF7A68}.c30{--c:#66CC63}.c99{--c:#B08AF5}.cn{--c:#8b929c}
+svg.i{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;vertical-align:-3px}
+button{font:inherit;color:var(--tx);background:none;border:1px solid var(--edge);border-radius:3px;height:32px;padding:0 12px;display:inline-flex;align-items:center;gap:7px}
+button.pri{background:var(--tx);border-color:var(--tx);color:#15171b;font-weight:600}
+header{height:52px;display:flex;align-items:center;gap:18px;padding:0 24px;background:var(--up);border-bottom:1px solid var(--rule)}
+header .nm{font-size:17px;font-weight:600}.sp{flex:1}
+.st{display:flex;align-items:center;gap:6px;color:var(--mu)}
+.srch{width:200px;height:32px;border-radius:3px;background:var(--bg);border:1px solid var(--rule);color:var(--mu);display:flex;align-items:center;gap:8px;padding:0 6px 0 10px}
+kbd{margin-left:auto;font:600 11px/1 inherit;color:var(--tx);background:#2f333a;border-radius:2px;padding:4px 6px}
+nav{height:44px;display:flex;gap:26px;padding:0 32px;border-bottom:1px solid var(--rule)}
+nav a{display:flex;align-items:center;gap:7px;color:var(--mu);font-size:14px;border-bottom:2px solid transparent;margin-bottom:-1px}
+nav a.on{color:var(--tx);font-weight:600;border-color:var(--tx)}
+.wrap{display:flex;height:804px}main{width:1080px;padding:22px 32px 0}
+.hd{display:flex;align-items:center;gap:12px;margin-bottom:12px}.hd h2{font-size:16px;font-weight:600}
+.lg{margin-left:auto;display:flex;gap:16px;color:var(--mu);font-size:12px}.lg span{display:flex;align-items:center;gap:6px}
+.stage{position:relative;padding-top:22px}.g{display:grid;grid-template-columns:var(--g)}
+.bands{position:absolute;inset:0 0 -4px;z-index:0}.bands i{grid-row:1;background:rgba(255,255,255,.06)}
+.bands i.hv{background:rgba(255,255,255,.13);box-shadow:inset 1px 0 #6b727d,inset -1px 0 #6b727d}
+.stage>.g:not(.bands){position:relative;z-index:1}
+.pc{grid-column:span 2;display:flex;flex-direction:column;gap:7px;padding:0 6px;position:relative}
+.sn{height:16px;font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sn small{font-size:10px;font-weight:400;color:var(--mu);margin-left:3px}
+.pl{position:relative;height:52px;border-radius:3px;background:var(--c,var(--plate))}
+.pl.n{background:var(--plate)}.pl.sel{outline:2px solid var(--tx);outline-offset:2px}
+.pl.stg{background:repeating-linear-gradient(135deg,var(--c) 0 4px,#15171b 4px 8px);box-shadow:inset 0 0 0 2px var(--c)}
+.j{position:absolute;left:50%;top:12px;width:40px;height:22px;margin-left:-20px;border-radius:2px;background:var(--hole);box-shadow:inset 0 2px 3px rgba(0,0,0,.6)}
+.j::after{content:"";position:absolute;left:12px;width:16px;height:6px;bottom:-6px;background:var(--hole);border-radius:0 0 2px 2px}
+.bt .j{top:18px}.bt .j::after{bottom:auto;top:-6px;border-radius:2px 2px 0 0}
+.j.sfp{top:17px;width:48px;height:16px;margin-left:-24px;box-shadow:inset 0 0 0 1px var(--edge)}.j.sfp::after{display:none}.bt .j.sfp{top:19px}
+.le::before,.le::after{content:"";position:absolute;top:4px;width:7px;height:5px;border-radius:1px;background:var(--off);box-shadow:0 0 0 1px rgba(0,0,0,.55)}
+.le::before{left:5px}.le::after{right:5px}.bt .le::before,.bt .le::after{top:auto;bottom:4px}
+.k .le::before{background:var(--grn);box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 7px var(--grn)}
+.a .le::before{background:var(--amb);box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 7px var(--amb)}
+.act .le::after,.led.act{background:var(--grn);box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 7px var(--grn);animation:blink .9s steps(2) infinite}
+@keyframes blink{50%{background:var(--off);box-shadow:0 0 0 1px rgba(0,0,0,.55)}}
+@media (prefers-reduced-motion:reduce){.act .le::after,.led.act{animation:none}}
+.tg{position:absolute;right:4px;bottom:4px;display:flex;gap:2px}.bt .tg{bottom:auto;top:4px}
+.tg u{width:9px;height:9px;border-radius:1px;background:var(--c);box-shadow:0 0 0 1.5px var(--hole)}
+.tg u.stg{background:repeating-linear-gradient(135deg,var(--c) 0 2px,var(--hole) 2px 4px)}
+.here{position:absolute;top:-21px;left:6px;background:var(--tx);color:#15171b;font-size:10px;font-weight:600;line-height:1;padding:3px 5px;border-radius:2px;white-space:nowrap;display:flex;gap:4px;align-items:center}
+/* visual key */
+.key{grid-column:1;align-self:center;display:grid;grid-template-columns:34px 1fr;gap:9px 10px;align-items:center;font-size:12px;color:var(--mu);padding-right:18px}
+.mp{position:relative;width:30px;height:22px;border-radius:2px;background:var(--c)}
+.mp::before{content:"";position:absolute;left:8px;top:5px;width:14px;height:8px;border-radius:1px;background:var(--hole)}
+.mp::after{content:"";position:absolute;left:12px;top:13px;width:6px;height:3px;background:var(--hole)}
+.mp i{position:absolute;right:2px;bottom:2px;width:6px;height:6px;border-radius:1px;background:var(--c);box-shadow:0 0 0 1px var(--hole)}
+.mp i+i{right:10px}
+.leds{display:flex;gap:4px;flex-wrap:wrap;width:30px}
+.led{display:inline-block;width:9px;height:6px;border-radius:1px;background:var(--off);box-shadow:0 0 0 1px rgba(0,0,0,.55)}
+.led.g{background:var(--grn);box-shadow:0 0 5px var(--grn)}.led.y{background:var(--amb);box-shadow:0 0 5px var(--amb)}
+.kl{display:flex;flex-wrap:wrap;gap:3px 10px}.kl span{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.key b{color:var(--tx);font-weight:600}
+/* matrix */
+.nums{height:30px;align-items:end;padding-bottom:6px;margin-top:12px;color:var(--mu);font-size:12px;border-bottom:1px solid var(--rule)}
+.nums span{text-align:center}.nums .hv{color:var(--tx);font-weight:600}
+.r{height:46px;align-items:center;border-bottom:1px solid var(--rule)}
+.r.on{background:rgba(255,122,104,.08);margin:0 -32px;padding:0 32px;box-shadow:inset 3px 0 var(--c)}
+.r>*{grid-row:1}.ln{grid-column:2/21;height:2px;background:var(--c);opacity:.55}
+.x{justify-self:center;width:18px;height:18px;border-radius:2px;background:var(--c);position:relative}
+.x.t,.sq.t{background:var(--bg);box-shadow:inset 0 0 0 2px var(--c)}
+.x.s,.sq.s,.bd.s{background:repeating-linear-gradient(135deg,var(--c) 0 3px,var(--bg) 3px 6px);box-shadow:inset 0 0 0 2px var(--c)}
+.x.lv{opacity:.7;outline:1px dashed var(--mu);outline-offset:2px}
+.vl{display:flex;align-items:center;gap:10px}.vl b{display:block;font-size:14px;line-height:1.25}
+.bd{width:28px;height:28px;border-radius:3px;background:var(--c);color:#15171b;font-size:12px;font-weight:600;display:grid;place-items:center;flex:none}
+.bd.sm{width:22px;height:22px;font-size:11px}.bd.s{color:var(--tx);text-shadow:0 0 3px #000,0 0 3px #000}
+.sq{display:inline-block;width:11px;height:11px;border-radius:2px;background:var(--c);vertical-align:-1px}
+.ct{display:flex;gap:10px;font-size:12px;color:var(--mu)}.ct span{display:inline-flex;align-items:center;gap:4px}
+.new{height:44px;display:flex;align-items:center;gap:8px;font-weight:600}
+.fresh{color:var(--mu);font-size:12px;display:flex;align-items:center;gap:6px}
+aside{width:360px;border-left:1px solid var(--rule);display:flex;flex-direction:column}
+.ip{padding:22px 24px 0}aside h2{font-size:19px;font-weight:600}
+.sub{display:flex;gap:12px;color:var(--mu);margin:4px 0 10px}.sub span{display:inline-flex;align-items:center;gap:5px}
+.f{padding:13px 0;border-top:1px solid var(--rule)}.f label{display:block;color:var(--mu);font-size:12px;margin-bottom:6px}
+.ctl{height:38px;border:1px solid var(--edge);border-radius:3px;display:flex;align-items:center;gap:10px;padding:0 10px 0 7px;background:var(--up)}
+.ctl .cv{margin-left:auto;color:var(--mu)}
+.mv{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--mu);margin-top:8px}
+.line{display:flex;align-items:center;justify-content:space-between}
+.tog{width:36px;height:20px;border-radius:10px;background:var(--grn);position:relative}
+.tog::after{content:"";position:absolute;right:2px;top:2px;width:16px;height:16px;border-radius:50%;background:#15171b}
+.grp{height:42px;display:flex;align-items:center;gap:10px;border-top:1px solid var(--rule)}
+.grp svg{color:var(--mu)}.grp b{width:112px}.grp span{color:var(--mu);flex:1}
+.tray{margin-top:auto;border-top:1px solid var(--rule);padding:16px 24px 20px;background:var(--up)}
+.tray h3{font-size:14px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:8px}.tray h3 .mu{margin-left:auto;font-weight:400;font-size:12px}
+.it{display:flex;gap:10px;align-items:center;padding:6px 0}
+.pn{width:22px;height:22px;border-radius:3px;background:var(--plate);display:grid;place-items:center;font-size:11px;font-weight:600;flex:none}
+.vis{display:flex;align-items:center;gap:5px;width:104px;flex:none;color:var(--mu)}
+.acts{display:flex;gap:8px;margin-top:12px}
+
+.mx{position:relative}.mx>.g:not(.ov){position:relative;z-index:1}
+.ov{position:absolute;inset:0;z-index:0;pointer-events:none}
+.nums span.sel{color:var(--tx);font-weight:600;box-shadow:inset 0 -2px var(--tx)}
+.nums span.hv{color:#15171b;font-weight:600;background:var(--tx);border-radius:9px;justify-self:center;padding:0 7px;line-height:18px;height:18px}
+.pl.hov{outline:2px solid var(--mu);outline-offset:2px}
+.x.hv{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--tx)}
+.r:nth-of-type(odd):not(.on){background:rgba(255,255,255,.035);margin:0 -32px;padding:0 32px}
+.guides i{grid-row:1;border-left:1px dashed rgba(255,255,255,.10)}.guides i:first-child{border-left:0}
+
+.strip{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;font-size:12px;color:var(--mu);margin:2px 0 4px;max-width:1016px}
+.strip .br{flex-basis:100%;height:0}
+.strip .sq.pend{margin-right:6px}
+.kk{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.strip .mp{width:24px;height:18px}.strip .mp::before{left:6px;top:4px;width:12px;height:7px}.strip .mp::after{left:9px;top:11px;width:6px;height:3px}
+.selk,.hvk{display:inline-grid;place-items:center;min-width:22px;height:18px;padding:0 5px;border-radius:9px;font-size:11px;font-weight:600}
+.selk{color:var(--tx);box-shadow:inset 0 0 0 1.5px var(--tx);border-radius:3px}.hvk{background:var(--tx);color:#15171b}
+.nums span.sel{color:var(--tx);font-weight:600;box-shadow:inset 0 0 0 1.5px var(--tx);border-radius:3px;justify-self:center;padding:0 6px;line-height:18px;height:18px}
+.sn{height:auto;min-height:44px;display:flex;flex-direction:column;justify-content:flex-end;font-size:13px;line-height:16px;overflow:visible;white-space:normal}
+.pc>.sn:not(.pl+.sn){flex-direction:column-reverse;justify-content:flex-start}.pc>.pl+.sn{justify-content:flex-start}
+.mk{display:flex;gap:8px;font-size:11px;white-space:nowrap}.mk span{display:inline-flex;align-items:center;gap:4px}
+.sn small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:1px 0 0;font-size:11.5px;line-height:13px;font-weight:400;color:#c9ced6;white-space:normal;overflow-wrap:anywhere}
+.here{top:-19px}
+.stage{padding-top:24px}
+
+.pend{position:relative;outline:1.5px dashed var(--tx);outline-offset:2px}
+.pend::after{position:absolute;top:-8px;right:-8px;width:12px;height:12px;border-radius:50%;background:var(--tx);color:#15171b;font:700 10px/12px -apple-system,BlinkMacSystemFont,sans-serif;text-align:center}
+.pend.add::after{content:"+"}.pend.rm::after{content:"−"}
+.x.rm{background:transparent;box-shadow:none;border:1.5px dashed var(--c);opacity:.9}
+.sq.pend{outline-offset:1px;outline-width:1px}.sq.pend::after{top:-6px;right:-7px;width:9px;height:9px;font-size:8px;line-height:9px}
+.sq.rm{background:transparent;border:1px dashed var(--c);box-shadow:none}
+.bd.pend::after{top:-6px;right:-6px}
+.tg u{background:var(--hole);box-shadow:inset 0 0 0 2px var(--c),0 0 0 1px var(--hole)}
+.tg u.pend{outline-width:1px;outline-offset:1px}.tg u.pend::after{display:none}
+.fut{position:absolute;left:4px;bottom:4px;display:flex;align-items:center;gap:2px;background:var(--hole);border-radius:2px;padding:1px 3px 1px 2px;color:var(--tx)}
+.fut svg{width:10px;height:10px}.fut i{width:10px;height:10px;border-radius:1px;background:var(--c)}
+.pl.chg{outline:1.5px dashed var(--tx);outline-offset:2px}.pl.chg.sel{outline:2px solid var(--tx);box-shadow:0 0 0 5px var(--bg),0 0 0 6.5px var(--tx)}
+
+.sn{align-items:center;text-align:center;min-height:0;gap:2px}
+.sn small{text-align:center;margin:0;color:#b9bfc8}
+.here{left:50%;transform:translateX(-50%)}
+
+.sn .no{font-size:15px;line-height:18px;font-weight:600}
+.pc>.sn:not(.pl+.sn){padding-bottom:1px}.pc>.pl+.sn{padding-top:1px}
+
+.stage>.g{grid-template-rows:auto 52px 8px 52px auto}
+.stage>.g>span:empty{grid-row:1/6}
+.pc{grid-row:1/6;display:grid;grid-template-rows:subgrid;row-gap:0;gap:0}
+.pc>.sn{grid-row:1}.pc>.pl{grid-row:2}.pc>.pl+.pl{grid-row:4;margin-top:0}.pc>.pl+.sn{grid-row:5}
+.pc>.sn{margin-bottom:5px}.pc>.pl+.sn{margin:5px 0 0}
+.no .cx{width:13px;height:13px;margin-left:4px;vertical-align:-1px;color:var(--tx)}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="vlan" viewBox="0 0 16 16"><rect x="2" y="2.5" width="5" height="5" rx="1"/><rect x="9" y="2.5" width="5" height="5" rx="1"/><rect x="2" y="9.5" width="5" height="5" rx="1"/><rect x="9" y="9.5" width="5" height="5" rx="1"/></symbol>
+<symbol id="link" viewBox="0 0 16 16"><rect x="1.5" y="4" width="13" height="9" rx="1.5"/><path d="M6 13v-2.5h4V13M4 6.5h2M10 6.5h2"/></symbol>
+<symbol id="traffic" viewBox="0 0 16 16"><path d="M3 13V8M6.5 13V4M10 13V7M13.5 13V2.5"/></symbol>
+<symbol id="err" viewBox="0 0 16 16"><path d="M8 2 14.5 13.5h-13Z M8 6.5v3.2M8 11.6v.1"/></symbol>
+<symbol id="dev" viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="8" rx="1"/><path d="M5.5 14h5M8 11v3"/></symbol>
+<symbol id="tree" viewBox="0 0 16 16"><circle cx="8" cy="3" r="1.6"/><circle cx="3.5" cy="12.5" r="1.6"/><circle cx="12.5" cy="12.5" r="1.6"/><path d="M8 4.6V8M8 8 3.5 10.9M8 8l4.5 2.9"/></symbol>
+<symbol id="lag" viewBox="0 0 16 16"><path d="M1.5 4h5c2 0 2.5 4 4.5 4h3.5M1.5 8h13M1.5 12h5c2 0 2.5-4 4.5-4"/></symbol>
+<symbol id="shield" viewBox="0 0 16 16"><path d="M8 1.8 13 3.6v4.1c0 3-2.1 5.4-5 6.5-2.9-1.1-5-3.5-5-6.5V3.6Z"/></symbol>
+<symbol id="leaf" viewBox="0 0 16 16"><path d="M3 13C3 7 7 3 13.5 2.5 13.5 9 9 13 3 13ZM3 13l6-6"/></symbol>
+<symbol id="pulse" viewBox="0 0 16 16"><path d="M1.5 8.5h3l2-5 3 9 2-4h3"/></symbol>
+<symbol id="clock" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><path d="M8 4.5V8l2.5 1.5"/></symbol>
+<symbol id="arrow" viewBox="0 0 16 16"><path d="M2.5 8h11M9.5 4l4 4-4 4"/></symbol>
+<symbol id="pen" viewBox="0 0 16 16"><path d="M2.5 13.5 3.3 10 10.8 2.5l2.7 2.7L6 12.7Z"/></symbol>
+<symbol id="plus" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></symbol>
+<symbol id="search" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 14 14"/></symbol>
+<symbol id="moon" viewBox="0 0 16 16"><path d="M13 9.5A5.5 5.5 0 0 1 6.5 3a5.5 5.5 0 1 0 6.5 6.5Z"/></symbol>
+<symbol id="save" viewBox="0 0 16 16"><path d="M3 2.5h8l2.5 2.5v8.5h-11Z M5.5 2.5v3.5h5V2.5M5 13.5V9.5h6v4"/></symbol>
+<symbol id="here" viewBox="0 0 16 16"><path d="M5.5 1.5v3M10.5 1.5v3M4 4.5h8v3a4 4 0 0 1-8 0Z M8 11.5v3"/></symbol>
+</defs></svg>
+<header>
+ <span class="nm">x1018</span><span class="mu">192.168.2.1</span>
+ <span class="st" title="Signed in. A tiny keepalive request runs while this tab is visible; the switch drops idle sessions after about a minute."><svg class="i" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" stroke="#454a52"/><path d="M8 2a6 6 0 1 1-5.6 8.2" stroke="#3ddc84"/></svg>Session kept alive</span>
+ <span class="st" title="All data on screen was read from the switch less than 30 s ago"><svg class="i"><use href="#clock"/></svg><b style="color:var(--tx)">Live</b> 12 s</span>
+ <span class="sp"></span>
+ <span class="srch"><svg class="i"><use href="#search"/></svg>Search<kbd>⌘K</kbd></span>
+ <button title="Changes waiting for Apply"><span class="sq pend" style="--c:transparent;outline-offset:1px"></span>3 pending</button>
+ <button class="pri" title="Applied but not in the startup configuration: they are lost on reboot until saved"><svg class="i"><use href="#save"/></svg>Save 2 changes</button>
+ <button>Settings</button><button>Activity</button>
+ <button title="Theme: dark (light available)"><svg class="i"><use href="#moon"/></svg></button>
+</header>
+<nav><a><svg class="i"><use href="#link"/></svg>Link</a><a class="on"><svg class="i"><use href="#vlan"/></svg>VLANs</a><a><svg class="i"><use href="#traffic"/></svg>Traffic</a><a><svg class="i"><use href="#err"/></svg>Errors</a><a><svg class="i"><use href="#dev"/></svg>Devices</a><a><svg class="i"><use href="#tree"/></svg>Spanning tree</a><a><svg class="i"><use href="#lag"/></svg>LAG</a></nav>
+<div class="wrap"><main>
+ <div class="hd"><h2>Front panel</h2><span class="mu">16 × RJ45 · 2 × SFP · 7 linked</span></div>
+ <div class="strip">
+  <span class="kk"><svg class="i" style="width:13px;height:13px;color:var(--tx)"><use href="#here"/></svg>your connection</span><span class="kk"><span class="mp c1"></span>untagged VLAN</span>
+  <span class="kk"><span class="mp c1"><i class="c20" style="--c:#FF7A68"></i><i class="c30" style="--c:#66CC63"></i></span>tagged VLANs</span>
+  <span class="kk"><i class="led g"></i>1 Gb/s</span><span class="kk"><i class="led y"></i>10/100</span><span class="kk"><i class="led"></i>no link</span><span class="kk"><i class="led act"></i>traffic</span>
+  <span class="kk"><span class="selk">5</span>selected</span><span class="kk"><span class="hvk">10</span>pointer</span><span class="br"></span><span class="kk" title="Changes you staged but have not applied yet"><b style="color:var(--tx)">Pending</b></span><span class="kk c20"><i class="sq pend add"></i>joins untagged</span><span class="kk c20"><i class="sq t pend add"></i>joins tagged</span><span class="kk c1"><i class="sq rm pend"></i>leaves</span>
+ </div>
+ <div class="stage">
+  <div class="g">
+   <span></span>
+   <div class="pc"><span class="sn"><b class="no">1<svg class="i cx" aria-label="Your connection" ><title>Your connection: your computer reaches the switch through this port. Changes that could cut it off ask before applying.</title><use href="#here"/></svg></b><small>uplink to router</small></span>
+    <b class="pl c1 k act"><i class="j"></i><i class="le"></i><i class="tg"><u class="c20"></u><u class="c30"></u></i></b>
+    <b class="pl c1 k act bt"><i class="j"></i><i class="le"></i><i class="tg"><u class="c30"></u></i></b><span class="sn"><b class="no">2</b><small>ap office ceiling</small></span></div>
+   <div class="pc"><span class="sn"><b class="no">3</b><small>ap hallway</small></span>
+    <b class="pl c1 k act"><i class="j"></i><i class="le"></i><i class="tg"><u class="c20 pend" title="Staged: adds VLAN 20 tagged"></u></i></b>
+    <b class="pl n bt"><i class="j"></i><i class="le"></i></b><span class="sn"><b class="no">4</b></span></div>
+   <div class="pc"><span class="sn"><b class="no">5</b><small>tv</small></span>
+    <b class="pl c20 k act sel"><i class="j"></i><i class="le"></i></b>
+    <b class="pl c20 k sel bt"><i class="j"></i><i class="le"></i></b><span class="sn"><b class="no">6</b><small>AV receiver</small></span></div>
+   <div class="pc"><span class="sn"><b class="no">7</b><small>console</small></span>
+    <b class="pl c1 sel chg" title="Staged: moves to VLAN 20 media (untagged)"><i class="j"></i><i class="le"></i><span class="fut c20"><svg class="i"><use href="#arrow"/></svg><i></i></span></b>
+    <b class="pl n bt"><i class="j"></i><i class="le"></i></b><span class="sn"><b class="no">8</b></span></div>
+   <div class="pc"><span class="sn"><b class="no">9</b></span><b class="pl n"><i class="j"></i><i class="le"></i></b><b class="pl n bt hov"><i class="j"></i><i class="le"></i></b><span class="sn"><b class="no">10</b></span></div>
+   <div class="pc"><span class="sn"><b class="no">11</b></span><b class="pl n"><i class="j"></i><i class="le"></i></b><b class="pl n bt"><i class="j"></i><i class="le"></i></b><span class="sn"><b class="no">12</b></span></div>
+   <div class="pc"><span class="sn"><b class="no">13</b></span><b class="pl n"><i class="j"></i><i class="le"></i></b><b class="pl n bt"><i class="j"></i><i class="le"></i></b><span class="sn"><b class="no">14</b></span></div>
+   <div class="pc"><span class="sn"><b class="no">15</b><small>camera front door</small></span>
+    <b class="pl c30 a act"><i class="j"></i><i class="le"></i></b>
+    <b class="pl c30 k act bt"><i class="j"></i><i class="le"></i></b><span class="sn"><b class="no">16</b><small>hue bridge (living room)</small></span></div>
+   <span></span>
+   <div class="pc"><span class="sn"><b class="no">17</b><small>SFP</small></span><b class="pl n"><i class="j sfp"></i><i class="le"></i></b><b class="pl n bt"><i class="j sfp"></i><i class="le"></i></b><span class="sn"><b class="no">18</b><small>SFP</small></span></div>
+  </div>
+  <div class="mx">
+  <div class="g ov guides"><i style="grid-column:2/4"></i><i style="grid-column:4/6"></i><i style="grid-column:6/8"></i><i style="grid-column:8/10"></i><i style="grid-column:10/12"></i><i style="grid-column:12/14"></i><i style="grid-column:14/16"></i><i style="grid-column:16/18"></i><i style="grid-column:19/21"></i></div>
+  <div class="g nums"><span class="mk c20" style="text-align:left"><span title="untagged member"><i class="sq"></i>untagged</span><span title="tagged member"><i class="sq t"></i>tagged</span></span><span>1</span><span>2</span><span>3</span><span>4</span><span class="sel">5</span><span class="sel">6</span><span class="sel">7</span><span>8</span><span>9</span><span class="hv">10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span></span><span>17</span><span>18</span></div>
+  <div class="g r c1 hrow"><span class="vl"><span class="bd">1</span><span><b>default</b><span class="ct"><span title="untagged ports"><i class="sq"></i>13</span><span title="1 port leaves (pending)" style="color:var(--tx)">−1</span></span></span></span><i class="ln"></i>
+   <b class="x" style="grid-column:2"></b><b class="x" style="grid-column:3"></b><b class="x" style="grid-column:4"></b><b class="x" style="grid-column:5"></b><b class="x rm pend" title="Staged: port 7 leaves VLAN 1" style="grid-column:8"></b><b class="x" style="grid-column:9"></b><b class="x" style="grid-column:10"></b><b class="x hv" style="grid-column:11"></b><b class="x" style="grid-column:12"></b><b class="x" style="grid-column:13"></b><b class="x" style="grid-column:14"></b><b class="x" style="grid-column:15"></b><b class="x" style="grid-column:19"></b><b class="x" style="grid-column:20"></b></div>
+  <div class="g r on c20"><span class="vl"><span class="bd">20</span><span><b>media</b><span class="ct"><span title="untagged ports"><i class="sq"></i>2</span><span title="tagged ports"><i class="sq t"></i>1</span><span title="1 port joins untagged (pending)" style="color:var(--tx)">+1<i class="sq"></i></span><span title="1 port joins tagged (pending)" style="color:var(--tx)">+1<i class="sq t"></i></span></span></span></span><i class="ln"></i>
+   <b class="x t" style="grid-column:2"></b><b class="x t pend add" title="Staged: port 3 joins VLAN 20 tagged" style="grid-column:4"></b><b class="x" style="grid-column:6"></b><b class="x" style="grid-column:7"></b><b class="x pend add" title="Staged: port 7 joins VLAN 20 untagged" style="grid-column:8"></b></div>
+  <div class="g r c30"><span class="vl"><span class="bd">30</span><span><b>iot</b><span class="ct"><span title="untagged ports"><i class="sq"></i>2</span><span title="tagged ports"><i class="sq t"></i>2</span></span></span></span><i class="ln"></i>
+   <b class="x t" style="grid-column:2"></b><b class="x t" style="grid-column:3"></b><b class="x" style="grid-column:16"></b><b class="x" style="grid-column:17"></b></div>
+  <div class="g r c99"><span class="vl"><span class="bd">99</span><span><b>mgmt</b><span class="ct"><span>no ports</span></span></span></span><i class="ln"></i></div>
+  </div>
+ </div>
+ <div class="new"><svg class="i"><use href="#plus"/></svg>New VLAN</div>
+ <p class="fresh"><svg class="i"><use href="#clock"/></svg>VLAN membership 12 s · links 12 s · devices 4 min</p>
+</main>
+<aside><div class="ip">
+  <h2>Ports 5–7</h2>
+  <p class="sub"><span>3 selected</span><span title="link at 1 Gb/s"><i class="led g"></i>2</span><span title="no link"><i class="led"></i>1</span></p>
+  <div class="f"><label>Network (untagged VLAN)</label>
+   <div class="ctl c20"><span class="bd sm">20</span><b>media</b><span class="cv">⌄</span></div>
+   <p class="mv"><span class="pn">7</span><span class="bd sm c1">1</span><svg class="i"><use href="#arrow"/></svg><span class="bd sm c20 pend">20</span>pending</p></div>
+  <div class="f"><label>Tagged VLANs</label><div class="line"><span class="mu">None</span><button><svg class="i"><use href="#plus"/></svg>Add tagged</button></div></div>
+  <div class="f line"><span><b>Port enabled</b><br><span class="mu" style="font-size:12px">all 3 ports</span></span><span class="tog" title="Enabled"></span></div>
+  <div class="grp"><svg class="i"><use href="#shield"/></svg><b>Security</b><span>Off</span>›</div>
+  <div class="grp"><svg class="i"><use href="#tree"/></svg><b>Spanning tree</b><span>Edge port</span>›</div>
+  <div class="grp"><svg class="i"><use href="#leaf"/></svg><b>Energy saving</b><span>EEE on</span>›</div>
+  <div class="grp"><svg class="i"><use href="#pulse"/></svg><b>Diagnostics</b><span>Cable test · counters</span>›</div>
+ </div>
+ <div class="tray">
+  <h3>3 pending changes<span class="mu">not applied yet</span></h3>
+  <div class="it"><span class="vis"><span class="pn">7</span><span class="bd sm c1">1</span><svg class="i"><use href="#arrow"/></svg><span class="bd sm c20 pend">20</span></span><span>Port 7 joins <b>media</b><br><span class="mu" style="font-size:12px">becomes an access port</span></span></div>
+  <div class="it"><span class="vis"><span class="pn">3</span><svg class="i"><use href="#plus"/></svg><span class="bd sm c20 pend" style="background:var(--bg);box-shadow:inset 0 0 0 2px var(--c);color:var(--tx)">20</span></span><span>Port 3 also carries <b>media</b>, tagged</span></div>
+  <div class="it"><span class="vis"><span class="pn">7</span><svg class="i"><use href="#pen"/></svg></span><span>Port 7 named “console”</span></div>
+  <div class="acts"><button class="pri">Apply 3 changes</button><button>Discard</button></div>
+ </div>
+</aside></div>
+</body></html>
